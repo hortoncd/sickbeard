@@ -1,4 +1,9 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rake"
-gem "foodcritic"
+gem 'rake'
+gem 'berkshelf'
+
+group :style do
+  gem 'foodcritic'
+  gem 'rubocop'
+end

@@ -31,6 +31,7 @@ Any changes the recipe made will be removed from your system, then you can remov
 ## License and Author
 
 Author:: Alex Howells (<alex@howells.me>)
+Author:: Michael Burns (<michael@mirwin.net>)
 
 Copyright 2012, Alex Howells
 
