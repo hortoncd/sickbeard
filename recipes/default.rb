@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe 'git'
+
 user node['sickbeard']['user'] do
   shell '/bin/bash'
   comment 'Web Application - Sickbeard'
