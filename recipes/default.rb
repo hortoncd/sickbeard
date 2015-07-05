@@ -24,12 +24,12 @@ user node['sickbeard']['user'] do
   system true
 end
 
-app_dirs = [ 
-  "#{node['sickbeard']['install_dir']}", 
-  "#{node['sickbeard']['config_dir']}", 
+app_dirs = [
+  "#{node['sickbeard']['install_dir']}",
+  "#{node['sickbeard']['config_dir']}",
   "#{node['sickbeard']['log_dir']}",
   "#{node['sickbeard']['data_dir']}"
-  ]
+]
 
 app_dirs.each do |x|
   directory x do
@@ -42,29 +42,29 @@ end
 
 git node['sickbeard']['install_dir'] do
   repository node['sickbeard']['git_url']
-  revision node['sickbeard']['git_ref']                                   
-  action :sync                                     
-  user node['sickbeard']['user']                 
-  group node['sickbeard']['group']                      
-  notifies :restart, "bluepill_service[sickbeard]", :immediately
+  revision node['sickbeard']['git_ref']
+  action :sync
+  user node['sickbeard']['user']
+  group node['sickbeard']['group']
+  notifies :restart, 'bluepill_service[sickbeard]', :immediately
 end
 
-case node["sickbeard"]["init_style"]
+case node['sickbeard']['init_style']
 when 'bluepill'
 
-  include_recipe "bluepill"
+  include_recipe 'bluepill'
 
   template "#{node['bluepill']['conf_dir']}/sickbeard.pill" do
-    source "sickbeard.pill.erb"
+    source 'sickbeard.pill.erb'
     mode 0644
-    notifies :load, "bluepill_service[sickbeard]", :immediately
-    notifies :restart, "bluepill_service[sickbeard]", :immediately
+    notifies :load, 'bluepill_service[sickbeard]', :immediately
+    notifies :restart, 'bluepill_service[sickbeard]', :immediately
   end
 
-  bluepill_service "sickbeard" do
+  bluepill_service 'sickbeard' do
     action [:enable, :load, :start]
   end
 
 else
-  Chef::Log.warn("sickbeard::service >> unable to determine valid init_style, manual intervention will be needed to start Sickbeard as a service.")
+  Chef::Log.warn('sickbeard::service >> unable to determine valid init_style, manual intervention will be needed to start Sickbeard as a service.')
 end

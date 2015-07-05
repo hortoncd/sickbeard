@@ -16,25 +16,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-default["sickbeard"]["user"] = 'sickbeard'
-default["sickbeard"]["group"] = 'sickbeard'
+default['sickbeard']['user'] = 'sickbeard'
+default['sickbeard']['group'] = 'sickbeard'
 
-default["sickbeard"]["listen_port"] = '8081'
+default['sickbeard']['listen_port'] = '8081'
 
-default["sickbeard"]["install_dir"] = '/srv/apps/sickbeard'
-default["sickbeard"]["config_dir"] = '/etc/sickbeard'
-default["sickbeard"]["data_dir"] = '/media/sickbeard'
+default['sickbeard']['install_dir'] = '/srv/apps/sickbeard'
+default['sickbeard']['config_dir'] = '/etc/sickbeard'
+default['sickbeard']['data_dir'] = '/media/sickbeard'
 
-default["sickbeard"]["log_dir"] = '/var/log/sickbeard'
+default['sickbeard']['log_dir'] = '/var/log/sickbeard'
 
-# Valid Options: 
+# Valid Options:
 #  bluepill
-default["sickbeard"]["init_style"] = 'bluepill'
+default['sickbeard']['init_style'] = 'bluepill'
 
-# Valid Options: 
+# Valid Options:
 #  git
-default["sickbeard"]["install_style"] = 'git'
+default['sickbeard']['install_style'] = 'git'
 
 # Git Options
-default["sickbeard"]["git_url"] = 'https://github.com/midgetspy/Sick-Beard.git'
-default["sickbeard"]["git_ref"] = '830b3b165877c880a7d9b029fa599479f9326f94'
+default['sickbeard']['git_url'] = 'https://github.com/midgetspy/Sick-Beard.git'
+default['sickbeard']['git_ref'] = '830b3b165877c880a7d9b029fa599479f9326f94'
