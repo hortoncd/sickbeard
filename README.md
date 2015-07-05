@@ -1,4 +1,4 @@
-# sickbeard [![Build Status](https://secure.travis-ci.org/agh-cookbooks/sickbeard.png?branch=master)](http://travis-ci.org/agh-cookbooks/sickbeard)
+# sickbeard [![Build Status](https://secure.travis-ci.org/multimedia-chef/sickbeard.png?branch=master)](http://travis-ci.org/multimedia-chef/sickbeard)
 
 ## Description
 
