@@ -24,12 +24,12 @@ user node['sickbeard']['user'] do
   system true
 end
 
-app_dirs = [
-  "#{node['sickbeard']['install_dir']}",
-  "#{node['sickbeard']['config_dir']}",
-  "#{node['sickbeard']['log_dir']}",
-  "#{node['sickbeard']['data_dir']}"
-]
+app_dirs = %w(
+  #{node['sickbeard']['install_dir']}
+  #{node['sickbeard']['config_dir']}
+  #{node['sickbeard']['log_dir']}
+  #{node['sickbeard']['data_dir']}
+)
 
 app_dirs.each do |x|
   directory x do
